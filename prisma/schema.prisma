@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Game {
+  id            Int      @id @default(autoincrement())
+  name          String
+  brand         String     // Ex: "PG", "PP", "WG"
+  image         Bytes      // Aqui vai a imagem em binário
+  link          String
+  percent1      Int
+  percent2      Int
+  percent3      Int
+  updatedAt     DateTime  @updatedAt
+}
