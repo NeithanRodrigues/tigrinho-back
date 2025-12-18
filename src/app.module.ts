@@ -5,6 +5,7 @@ import { AppService } from './app.service';
 import { GamesModule } from './games/games.module';
 import { PrismaModule } from './prisma/prisma.module';
 import { AdminModule } from './admin/admin.module';
+import { PlataformsModule } from './plataforms/plataforms.module';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { AdminModule } from './admin/admin.module';
     
     PrismaModule, 
     GamesModule, 
-    AdminModule
+    AdminModule, PlataformsModule
   ],
   controllers: [AppController],
   providers: [AppService],
