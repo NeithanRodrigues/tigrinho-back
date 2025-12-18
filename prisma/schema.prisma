@@ -8,12 +8,22 @@ datasource db {
 
 model Game {
   id            Int      @id @default(autoincrement())
-  name          String
-  brand         String     // Ex: "PG", "PP", "WG"
-  image         Bytes      // Aqui vai a imagem em binário
+  name          String?
+  brand         String     // "PG", "PP", "WG"
+  imageName     String     
   link          String
-  percent1      Int
-  percent2      Int
-  percent3      Int
   updatedAt     DateTime  @updatedAt
+
+  @@map("game")
+}
+
+model Plataformas {
+  id            Int   @id @default(autoincrement())
+  name          String @unique
+  brand         String?
+  imageName     String
+  link          String
+  updatedAt     DateTime @updatedAt
+
+  @@map("plataformas")
 }

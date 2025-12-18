@@ -7,20 +7,19 @@ export class GamesService {
 
   constructor(private prisma: PrismaService) {}
 
-  // Gera porcentagens fixas durante 5 min
   private generatePercentages(gameId: number) {
     const now = Date.now();
 
     const cached = this.cache.get(gameId);
     if (cached && cached.expires > now) {
-      return cached; // retorna o que já estava
+      return cached;
     }
 
     const p1 = Math.floor(Math.random() * 100);
     const p2 = Math.floor(Math.random() * 100);
     const p3 = Math.floor(Math.random() * 100);
 
-    const expires = now + 5 * 60 * 1000; // 5 min
+    const expires = now + 5 * 60 * 1000; 
 
     this.cache.set(gameId, { p1, p2, p3, expires });
 

@@ -1,14 +1,14 @@
 import { IsString } from 'class-validator';
 
-export class CreateGameDto {
+export class CreatePlataformaDto {
   @IsString()
   name: string;
 
   @IsString()
-  brand: string; 
+  brand: string;
 
   @IsString()
-  imageName: string; 
+  imageName: string;
 
   @IsString()
   link: string;

@@ -7,6 +7,7 @@ import { Pool } from 'pg';
 export class PrismaService
   extends PrismaClient
   implements OnModuleInit, OnModuleDestroy {
+  link: any;
   constructor() {
   if (!globalThis.prismaPool) {
     globalThis.prismaPool = new Pool({ connectionString: process.env.DATABASE_URL });
