@@ -5,7 +5,7 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class GamesService {
   private cache = new Map<number, { p1: number; p2: number; p3: number; expires: number }>();
 
-  constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) { }
 
   private generatePercentages(gameId: number) {
     const now = Date.now();
@@ -19,7 +19,7 @@ export class GamesService {
     const p2 = Math.floor(Math.random() * 100);
     const p3 = Math.floor(Math.random() * 100);
 
-    const expires = now + 5 * 60 * 1000; 
+    const expires = now + 5 * 60 * 1000;
 
     this.cache.set(gameId, { p1, p2, p3, expires });
 

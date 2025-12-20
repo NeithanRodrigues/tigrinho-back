@@ -15,8 +15,8 @@ export class GamesController {
     return this.gamesService.search(q);
   }
 
-  @Get('brand')
-  async filterByBrand(@Query('type') type: string) {
-    return this.gamesService.filterByBrand(type);
+  @Get('brand/:brand')
+async filterByBrand(@Query('brand') brand: string) {
+    return this.gamesService.filterByBrand(brand);
   }
 }
